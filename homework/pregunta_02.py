@@ -14,3 +14,8 @@ def pregunta_02():
     4
 
     """
+    from homework.getCsv import getCsv 
+
+    df = getCsv(0)
+    num_columns = df.shape[1]
+    return num_columns
