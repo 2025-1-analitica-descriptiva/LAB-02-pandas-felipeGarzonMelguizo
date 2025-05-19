@@ -22,3 +22,9 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
+    from homework.getCsv import getCsv 
+    
+    df = getCsv(1)
+    grouped = df.groupby("c0")["c4"].apply(lambda x: ",".join(sorted(set(x))))
+    return grouped.rename("c4").reset_index()
+

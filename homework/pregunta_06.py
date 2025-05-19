@@ -15,3 +15,11 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    from homework.getCsv import getCsv 
+
+    df = getCsv(1)
+    unique_values = df["c4"].unique()
+    unique_values = [str(value).upper() for value in unique_values]
+    unique_values.sort()
+
+    return unique_values

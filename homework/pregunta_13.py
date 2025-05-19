@@ -20,3 +20,12 @@ def pregunta_13():
     E    275
     Name: c5b, dtype: int64
     """
+    from homework.getCsv import getCsv 
+
+    df0 = getCsv(0)
+    df2 = getCsv(2)
+
+    merged_df = df0.merge(df2, left_on="c0", right_on="c0")
+    result = merged_df.groupby("c1")["c5b"].sum()
+    result = result.sort_index()
+    return result

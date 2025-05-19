@@ -21,3 +21,9 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    from homework.getCsv import getCsv 
+
+    df = getCsv(0)
+    counts = df["c1"].value_counts()
+    counts = counts.sort_index()
+    return counts

@@ -20,3 +20,9 @@ def pregunta_04():
     E    4.785714
     Name: c2, dtype: float64
     """
+    from homework.getCsv import getCsv 
+
+    df = getCsv(0)
+    averages = df.groupby("c1")["c2"].mean()
+    averages = averages.sort_index()
+    return averages

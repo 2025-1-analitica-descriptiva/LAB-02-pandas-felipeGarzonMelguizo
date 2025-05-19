@@ -20,3 +20,9 @@ def pregunta_10():
     D                   1:2:3:5:5:7
     E   1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
+    from homework.getCsv import getCsv 
+
+    df = getCsv(0)
+    grouped = df.groupby("c1")["c2"].apply(lambda x: ":".join(map(str, sorted(x))))
+    return grouped.rename("c2").reset_index().set_index("c1")
+

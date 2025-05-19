@@ -22,3 +22,8 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
+    from homework.getCsv import getCsv 
+    
+    df = getCsv(0)
+    df["suma"] = df["c0"] + df["c2"]
+    return df

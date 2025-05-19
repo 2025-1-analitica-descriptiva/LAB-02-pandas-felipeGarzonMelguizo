@@ -20,3 +20,9 @@ def pregunta_05():
     E    9
     Name: c2, dtype: int64
     """
+    from homework.getCsv import getCsv 
+
+    df = getCsv(0)
+    max_values = df.groupby("c1")["c2"].max()
+    max_values = max_values.sort_index()
+    return max_values
